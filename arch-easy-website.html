@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arch Linux Made Easier</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 0;
+        }
+        
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: #00d4ff;
+            color: #1e3c72;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.6);
+        }
+        
+        .info-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #00d4ff;
+        }
+        
+        h3 {
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+            color: #00d4ff;
+        }
+        
+        .step {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 4px solid #00d4ff;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #00d4ff;
+            color: #1e3c72;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        code {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+        }
+        
+        .warning {
+            background: rgba(255, 193, 7, 0.2);
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Arch Linux Made Easier</h1>
+            <p class="tagline">A beginner-friendly Arch Linux ISO with XFCE desktop environment</p>
+            <a href="https://archive.org/details/archlinux-2026.01.07-x86_64" class="download-btn">Download ISO (1.8GB)</a>
+        </header>
+        
+        <div class="info-box">
+            <h2>What's Included?</h2>
+            <ul class="feature-list">
+                <li>Arch Linux base system with latest kernel</li>
+                <li>XFCE desktop environment (lightweight and beautiful)</li>
+                <li>Pre-configured audio with PipeWire</li>
+                <li>NetworkManager for easy WiFi setup</li>
+                <li>Firefox web browser</li>
+                <li>Essential development tools</li>
+                <li>archinstall - guided installation wizard</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h2>Installation Guide</h2>
+            
+            <h3>Step 1: Boot the Live USB</h3>
+            <div class="step">
+                <span class="step-number">1</span>
+                Write the ISO to a USB drive using Rufus (Windows), Etcher (Mac/Linux), or dd command.
+            </div>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                Boot from the USB drive. You'll see the XFCE desktop environment load automatically.
+            </div>
+            
+            <h3>Step 2: Connect to the Internet</h3>
+            <div class="step">
+                <span class="step-number">3</span>
+                Open a terminal and run: <code>systemctl start NetworkManager</code>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">4</span>
+                Then run: <code>nmtui</code> to connect to WiFi using the text interface.
+            </div>
+            
+            <h3>Step 3: Start the Installer</h3>
+            <div class="step">
+                <span class="step-number">5</span>
+                In the terminal (you're already logged in as root), type: <code>archinstall</code>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">6</span>
+                Follow the guided installation process. The installer will walk you through:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Selecting your disk and partitioning</li>
+                    <li>Choosing your timezone and locale</li>
+                    <li>Creating your user account</li>
+                    <li>Installing the bootloader</li>
+                </ul>
+            </div>
+            
+            <div class="warning">
+                <strong>⚠️ Important:</strong> Make sure to select <strong>XFCE</strong> as your desktop environment during installation to match the live environment you're using!
+            </div>
+            
+            <h3>Step 4: Reboot and Enjoy</h3>
+            <div class="step">
+                <span class="step-number">7</span>
+                Once installation is complete, remove the USB drive and reboot. Your new Arch Linux system with XFCE is ready!
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <h2>Quick Tips</h2>
+            <div class="step">
+                <strong>Login credentials for live environment:</strong>
+                <br>Username: <code>root</code>
+                <br>Password: (just press Enter, no password needed)
+            </div>
+            
+            <div class="step">
+                <strong>Terminal:</strong> Find "Terminal" or "Terminal Emulator" in the applications menu. You're automatically logged in as root.
+            </div>
+            
+            <div class="step">
+                <strong>Package Manager:</strong> After installation, use <code>pacman -S package-name</code> to install software.
+            </div>
+        </div>
+        
+        <footer>
+            <p>Built with ❤️ for the Arch Linux community</p>
+            <p>This is an unofficial, community-created distribution</p>
+        </footer>
+    </div>
+</body>
+</html>
